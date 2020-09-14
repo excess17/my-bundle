@@ -1,0 +1,20 @@
+kind: "EntandoPlugin"
+apiVersion: "entando.org/v1"
+metadata:
+  name: "mybundle-plugin"
+spec:
+  image: organization/mybundle:0.0.1-SNAPSHOT
+  replicas: 1
+  dbms: mysql
+  parameters: {}
+  ingressPath: "/mybundle"
+  healthCheckPath: "/management/health"
+  securityLevel: "strict"
+  connectionConfigNames: []
+  permissions: []
+  roles:
+  - name: mybundle-admin
+    code: mybundle-admin
+  - name: conference-admin
+    code: "conference-admin"
+# entando-needle-descriptor-add-roles - Entando blueprint will add roles here
